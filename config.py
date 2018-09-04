@@ -11,5 +11,5 @@ class Config(object):
         'APP_HOME': 'https://' + HOST,
         'CALLBACK_URL': 'https://' + HOST + '/install',
         'REDIRECT_URI': 'https://' + HOST + '/connect',
-        'SCOPE': 'read_products,read_collection_listings'
+        'SCOPE': 'read_products,read_collection_listings,write_products'
     }
