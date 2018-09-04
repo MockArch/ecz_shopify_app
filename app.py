@@ -3,11 +3,29 @@ from config import Config as cfg
 import requests
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 app.debug = True
 app.secret_key = cfg.SECRET_KEY
 
 
+
+
+@app.route('/products', methods=['GET'])
+def products():
+    """ Get a stores products """
+    headers = {
+        "X-Shopify-Access-Token": session.get("access_token"),
+        "Content-Type": "application/json"
+    }
+
+    endpoint = "/admin/products.json"
+    response = requests.get("https://{0}{1}".format(session.get("shop"),
+                                                   endpoint), headers=headers)
+
+    if response.status_code == 200:
+        return response
+    else:
+        return False
 
 
 @app.route('/install', methods=['GET'])
