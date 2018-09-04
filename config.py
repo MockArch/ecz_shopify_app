@@ -8,8 +8,8 @@ class Config(object):
     SHOPIFY_CONFIG = {
         'API_KEY': os.getenv('API_KEY'),
         'API_SECRET': os.getenv('SECRET_KEY'),
-        'APP_HOME': 'http://' + HOST,
-        'CALLBACK_URL': 'http://' + HOST + '/install',
-        'REDIRECT_URI': 'http://' + HOST + '/connect',
-        'SCOPE': 'read_products, read_collection_listings'
+        'APP_HOME': 'https://' + HOST,
+        'CALLBACK_URL': 'https://' + HOST + '/install',
+        'REDIRECT_URI': 'https://' + HOST + '/connect',
+        'SCOPE': 'read_products,read_collection_listings'
     }
